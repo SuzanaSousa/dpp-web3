@@ -21,7 +21,6 @@ function getContract(){
 
     const from = localStorage.getItem("wallet");
     const web3 = new Web3(window.ethereum);
-
     return new web3.eth.Contract(ABI, CONTRACT_ADDRESS, {from});
 }
 export async function getDispute() {
