@@ -67,7 +67,6 @@ export default function Bet() {
 return (
     <>
       <Head>
-
         <title>BetCandidate | Bet</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -85,23 +84,23 @@ return (
           
         </div>
         <div className="row flex-lg-rw-reverse align-items-center g-l py-5">
-        {
-          dispute.winner == 0 || dispute.winner == 1
-            ? <div className="col" >
-              <h3 className="my-2 d-block mx-auto"  style={{width: 250}}>
-              {dispute.candidate1} 
-              </h3>
-            <img src={dispute.image1} className="my-2 d-block mx-auto" style={{width: 250}}></img>
-            {
-              dispute.winner == 1
-              ?<button className="btn btn-primary p-3 my-2 d-block mx-auto" style={{widows:250}} onClick={btnClaimClick}> Retirar meu prêmio </button>
-              :<button className="btn btn-primary p-3 my-2 d-block mx-auto" style={{widows:250}} onClick={() => processBet(1)}> Aposto nesse candidato </button>
+          <div className="col"></div>
+         {
+           dispute.winner == 0 || dispute.winner == 1
+              ? <div className="col" >
+                 <h3 className="my-2 d-block mx-auto"  style={{width: 250}}>                 {dispute.candidate1} 
+                 </h3>
+                <img src={dispute.image1} className="my-2 d-block mx-auto" style={{width: 250}}></img>
+               {
+                dispute.winner == 1
+                   ?<button className="btn btn-primary p-3 my-2 d-block mx-auto" style={{widows:250}} onClick={btnClaimClick}> Retirar meu prêmio </button>
+                   :<button className="btn btn-primary p-3 my-2 d-block mx-auto" style={{widows:250}} onClick={() => processBet(1)}> Aposto nesse candidato </button>
             }
             <span className="badge text-bg-secondary d-block mx-auto" style={{width:250}}>{Web3.utils.fromWei(dispute.total1, "ether")} POL Apostados </span>
           </div>
           :<> </>
-        } 
-        {
+         } 
+         {
           dispute.winner == 0 || dispute.winner == 2
           ?<div className="col" >
             <h3 className="my-2 d-block mx-auto" style={{width: 250}}>
