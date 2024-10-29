@@ -4,7 +4,6 @@ import Head from "next/head";
 import {useRouter} from "next/navigation";
 import { useState } from "react";
 import { doLogin } from "@/services/Web3Service"; 
-import { ether } from "web3";
 
 export default function Home() {
 
